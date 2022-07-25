@@ -33,11 +33,7 @@ services:
     restart: always
     container_name: drf_backend
     image: gideonravenor1/api_yamdb:1.0
-    build:
-      context: ../api_yamdb
-      dockerfile: Dockerfile
     volumes:
-      - ../api_yamdb:/app
       - static_volume:/app/staticfiles
     command: bash -c "cd /app &&
       python manage.py migrate --noinput &&
