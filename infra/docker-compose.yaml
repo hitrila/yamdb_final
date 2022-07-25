@@ -32,7 +32,7 @@ services:
   backend:
     restart: always
     container_name: drf_backend
-    image: gideonravenor1/api_yamdb:1.0
+    image: gideonravenor1/yamdb_final:latest
     volumes:
       - static_volume:/app/staticfiles
     command: bash -c "cd /app &&
