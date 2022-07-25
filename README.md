@@ -52,12 +52,7 @@ docker-compose config
 ```
 Если всё успешно, все переменные на местах, запустить командой:
 ```
-docker-compose up --build -d
-```
-
-Или загрузить готовый image в dockerHub командой:
-```
-docker run gideonravenor1/api_yamdb:1.0
+docker-compose -f docker-compose.dev.yml up --build -d
 ```
 
 Что бы создать суперпользователя, \
@@ -79,12 +74,20 @@ python manage.py loaddata fixtures/fixtures.json
 ```
 exit
 ```
-Теперь, благодаря использованию Nginx нет необходимости прописывать порт.
 Следующие сервисы будут доступны по адресам:
 
 ## API
-1. http://localhost/api/swagger/
-2. http://localhost/api/redoc/
+1. http://localhost:8000/api/swagger/
+2. http://localhost:8000/api/redoc/
 
 ## UI панель базы данный PostgeSQL
-1. http://localhost/pgadmin4/
+1. http://localhost:5050
+
+
+## Развернутый экземпляр приложения доступен по адресу:
+## API
+1. http://yatube-yandex.ddns.net/api/swagger/
+2. http://yatube-yandex.ddns.net/api/redoc/
+
+## UI панель базы данный PostgeSQL
+1. http://yatube-yandex.ddns.net/pgadmin4/
