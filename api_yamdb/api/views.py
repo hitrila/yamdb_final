@@ -1,4 +1,4 @@
-from typing import List, Union
+from typing import List, Type, Union
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.tokens import default_token_generator
@@ -196,7 +196,7 @@ class TitleModelViewSet(viewsets.ModelViewSet):
 
     def get_serializer_class(
         self,
-    ) -> Union[TitleGetSerializer, TitlePostPatchSerializer]:
+    ) -> Union[Type[TitleGetSerializer], Type[TitlePostPatchSerializer]]:
         """
         Метод получения сериализатора по параметрам из self.action.
         :return: Один из сериазаторов.
@@ -206,6 +206,7 @@ class TitleModelViewSet(viewsets.ModelViewSet):
             serializer = TitleGetSerializer
         else:
             serializer = TitlePostPatchSerializer
+
         return serializer
 
     def create(self, request, *args, **kwargs) -> Response:
