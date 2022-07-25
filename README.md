@@ -1,4 +1,5 @@
-[![YamDB CI/CD](https://github.com/GideonRavenor1/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)]
+[![YamDB API CI/CD](https://github.com/GideonRavenor1/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)]
+(https://github.com/GideonRavenor1/yamdb_final/actions/workflows/yamdb_workflow.yml)
 
 # Учебный проект YaMDb в рамках учебы Yandex.Practicum.
 
@@ -70,12 +71,8 @@ docker exec -it drf_backend bash
 python manage.py createsuperuser
 ```
 и следовать дальнейшим инструкциям.
-
-При необходимости залить тестовые данные из CSV файлов командой:
 ```
-python manage.py load_csv
-```
-Или загрузить дамп базы командой:
+Загрузить дамп базы командой:
 ```
 python manage.py loaddata fixtures/fixtures.json
 ```
