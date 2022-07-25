@@ -1,5 +1,4 @@
-[![YamDB API CI/CD](https://github.com/GideonRavenor1/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)]
-(https://github.com/GideonRavenor1/yamdb_final/actions/workflows/yamdb_workflow.yml)
+[!YamDB API CI/CD](https://github.com/GideonRavenor1/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 # Учебный проект YaMDb в рамках учебы Yandex.Practicum.
 

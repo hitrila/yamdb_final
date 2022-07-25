@@ -4,8 +4,8 @@ from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.db import IntegrityError
 from rest_framework import serializers
-
 from reviews.models import Title, Category, Genre, Review, Comment, User
+
 from .email import ConfirmationCodeEmailMessage
 from .validators import username_validator
 

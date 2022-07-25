@@ -13,7 +13,7 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
-
+from reviews.filters import TitleFilter
 from reviews.models import (
     Title,
     Category,
@@ -21,7 +21,7 @@ from reviews.models import (
     Review,
     Comment,
 )
-from reviews.filters import TitleFilter
+
 from .custom_viewset import CreateListDestroyModelMixinViewSet
 from .permissions import (
     IsAdminOrReadOnly,
