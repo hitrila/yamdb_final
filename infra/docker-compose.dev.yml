@@ -3,7 +3,7 @@ services:
   postgresql_db:
     restart: always
     container_name: drf_db
-    image: postgres:latest
+    image: postgres:14-alpine
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -40,7 +40,7 @@ services:
       - ../api_yamdb:/app
     command: bash -c "cd /app &&
       python manage.py migrate --noinput &&
-      python manage.py runserver"
+      python manage.py runserver 0.0.0.0:8000"
     depends_on:
       - postgresql_db
     networks:

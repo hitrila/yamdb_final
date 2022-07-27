@@ -45,7 +45,7 @@
 2. Для [macOS](https://docs.docker.com/desktop/mac/install/)
 3. Для дистрибутивов [Linux](https://docs.docker.com/desktop/linux/#uninstall)
 
-После установки проверьте конфигурацию переменных окружений \
+После установки проверьте конфигурацию переменных окружений 
 командой:
 ```
 docker-compose config
@@ -55,7 +55,7 @@ docker-compose config
 docker-compose -f docker-compose.dev.yml up --build -d
 ```
 
-Что бы создать суперпользователя, \
+Что бы создать суперпользователя, 
 необходимо войти в контейнер командой:
 ```
 docker exec -it drf_backend bash
