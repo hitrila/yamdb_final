@@ -1,4 +1,4 @@
-[![Yamdb-app workflow](https://github.com/GideonRavenor1/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/GideonRavenor1/yamdb_final/actions/workflows/yamdb_workflow.yml)
+[![Yamdb-app workflow](https://github.com/GideonRavenor1/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?branch=master)](https://github.com/GideonRavenor1/yamdb_final/actions/workflows/yamdb_workflow.yml)
 
 # Учебный проект YaMDb в рамках учебы Yandex.Practicum.
 
