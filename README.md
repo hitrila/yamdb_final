@@ -17,7 +17,7 @@
 >>4. PostgresSQL ![Postgresql](https://img.shields.io/badge/-Postgresql-%232c3e50?style=flat-square&logo=Postgresql)
 >>5. pgAdmin ![pgAdmin](https://img.shields.io/badge/PG-pgAdmin-blue?style=flat-square&logo=pgAdmin)
 >>6. Nginx ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=flat-square&logo=nginx&logoColor=white)
->>7. ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=flat-square&logo=swagger&logoColor=white)
+>>7. Swagger ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=flat-square&logo=swagger&logoColor=white)
 
 # Как запустить проект:
 
@@ -59,6 +59,10 @@ docker-compose -f docker-compose.dev.yml up --build -d
 необходимо войти в контейнер командой:
 ```
 docker exec -it drf_backend bash
+```
+Применить миграции:
+```
+python manage.py migrate
 ```
 После ввести команду:
 ```
