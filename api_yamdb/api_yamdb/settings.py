@@ -149,38 +149,3 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 LOGGER_LINE_SEPARATOR = "-" * 80
-
-if DEBUG is False:
-    LOGGING = {
-        'version': 1,
-        'disable_existing_loggers': False,
-        'formatters': {
-            'file': {
-                'format': f'{LOGGER_LINE_SEPARATOR}\n'
-                '{asctime} - {name} - {levelname}'
-                ' - {module} - {filename} - {message}',
-                'style': '{',
-            }
-        },
-        'handlers': {
-            'file': {
-                'level': 'ERROR',
-                'class': 'logging.FileHandler',
-                'filename': 'logs/logger.log',
-                'formatter': 'file',
-                'encoding': 'UTF-8',
-            }
-        },
-        'loggers': {
-            'django.request': {
-                'level': 'ERROR',
-                'handlers': ['file'],
-                'propagate': True,
-            },
-            'django.db.backends': {
-                'level': 'ERROR',
-                'handlers': ['file'],
-                'propagate': True,
-            },
-        },
-    }
