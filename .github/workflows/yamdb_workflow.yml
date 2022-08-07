@@ -1,9 +1,6 @@
-name: Yamdb-app workflow
+name: yamdb_final workflow
 
-on:
-  push:
-    branches:
-      - master
+on: push
 
 jobs:
   tests:
@@ -21,12 +18,10 @@ jobs:
         python -m pip install --upgrade pip 
         pip install flake8
         pip install -r api_yamdb/requirements.txt 
-
     - name: Test with flake8 and django tests
       run: |
         python -m flake8
-        pytest -v
-
+        python api_yamdb/manage.py test
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
@@ -71,13 +66,7 @@ jobs:
           echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
           echo DB_HOST=${{ secrets.DB_HOST }} >> .env
           echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-          echo RECIPIENTS_EMAIL=${{ secrets.RECIPIENTS_EMAIL }} >> .env
-          echo DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }} >> .env
-          echo EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }} >> .env
-          echo PGADMIN_DEFAULT_EMAIL=${{ secrets.PGADMIN_DEFAULT_EMAIL }} >> .env
-          echo PGADMIN_DEFAULT_PASSWORD=${{ secrets.PGADMIN_DEFAULT_PASSWORD }} >> .env
           sudo docker-compose up -d
-
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
@@ -87,4 +76,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: ${{ github.workflow }} успешно выполнен!
+        message: Workflow - ${{ github.workflow }} завершился учпешно! 
