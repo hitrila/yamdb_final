@@ -1,4 +1,4 @@
-from typing import List, Type, Union
+from typing import List, Union
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.tokens import default_token_generator
@@ -13,7 +13,7 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
-from reviews.filters import TitleFilter
+
 from reviews.models import (
     Title,
     Category,
@@ -21,7 +21,7 @@ from reviews.models import (
     Review,
     Comment,
 )
-
+from reviews.filters import TitleFilter
 from .custom_viewset import CreateListDestroyModelMixinViewSet
 from .permissions import (
     IsAdminOrReadOnly,
@@ -196,7 +196,7 @@ class TitleModelViewSet(viewsets.ModelViewSet):
 
     def get_serializer_class(
         self,
-    ) -> Union[Type[TitleGetSerializer], Type[TitlePostPatchSerializer]]:
+    ) -> Union[TitleGetSerializer, TitlePostPatchSerializer]:
         """
         Метод получения сериализатора по параметрам из self.action.
         :return: Один из сериазаторов.
@@ -206,7 +206,6 @@ class TitleModelViewSet(viewsets.ModelViewSet):
             serializer = TitleGetSerializer
         else:
             serializer = TitlePostPatchSerializer
-
         return serializer
 
     def create(self, request, *args, **kwargs) -> Response:
