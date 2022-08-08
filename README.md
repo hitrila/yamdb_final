@@ -63,5 +63,5 @@ python manage.py loaddata fixtures.json
 Следующие сервисы будут доступны по адресам:
 
 ## API
-1. http://localhost:8000/api/swagger/
-2. http://localhost:8000/api/redoc/
+1. http://yatube-hit.ddns.net:8000/api/swagger/
+2. http://yatube-hit.ddns.net:8000/api/redoc/
